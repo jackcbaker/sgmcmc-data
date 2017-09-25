@@ -6,6 +6,7 @@ mnistTF = tfData$mnist$read_data_sets("MNIST-data", one_hot = TRUE)
 mnist = list() 
 mnist$train = list( "images" = mnistTF$train$images, "labels" = mnistTF$train$labels )
 mnist$test = list( "images" = mnistTF$test$images, "labels" = mnistTF$test$labels )
+devtools::use_data(mnist, overwrite = TRUE)
 # Delete downloaded files
 message("Deleting temporary files")
 unlink("MNIST-data", recursive = TRUE)
